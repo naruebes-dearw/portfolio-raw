@@ -22,7 +22,7 @@ function OutsideClick(ref, { isClicked, setIsClicked }) {
 }
 
 const Navbar = ({ theme, themeToggle }) => {
-  const [isClicked, setIsClicked] = useState();
+  const [isClicked, setIsClicked] = useState(true);
   const boxRef = useRef(null);
   const boxOutsideClick = OutsideClick(boxRef, { isClicked, setIsClicked });
   const showSidebar = !boxOutsideClick && 'show-sidebar'

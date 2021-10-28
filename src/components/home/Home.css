@@ -18,8 +18,13 @@
   justify-content: center;
 }
 
-.home-name {
-  font-size: 45px;
+.home-text {
+  margin: 30px;
+  text-align: center;
+}
+
+.home-text h1 {
+  font-size: 50px;
 }
 
 .info-items {
@@ -119,3 +124,48 @@
 }
 
 
+@media screen and (max-width: 480px) {
+  .home {
+    text-align: center;
+    width: 90%;
+  }
+
+  .home-right {
+    display: none;
+  }
+
+  .home-container {
+    height: 80vh;
+  }
+
+  .home-left {
+    width: 100%;
+  }
+
+  .home-text {
+    margin: 10px;
+    text-align: center;
+  }
+
+  .btn-email {
+    width: 320px;
+    font-size: 16px;
+  }
+    
+  .btn-email .icon-email-container {
+    width: 40px;
+    height: 70%;
+    display: grid;
+    place-items: center;
+    border-left: 2px solid #999;
+  }
+
+  .btn-email svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .email-container {
+    margin-top: 10px;
+  }
+}

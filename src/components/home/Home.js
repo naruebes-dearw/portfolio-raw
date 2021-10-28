@@ -23,8 +23,10 @@ const Home = ({ theme }) => {
     <div className="home" id="home">
       <div className="home-container">
         <div className="home-left">
-          <h1 className="home-name">Hi, I'm Naruebes.</h1>
-          <h2 className="home-job">Fullstack developer.</h2>
+          <div className="home-text">
+            <h1>Hi, I'm Naruebes</h1>
+            <h2 className="home-job">Fullstack developer.</h2>
+          </div>
 
           <div className="info-items">
             <InfoItem
