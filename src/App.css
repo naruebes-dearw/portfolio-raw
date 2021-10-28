@@ -1,38 +1,167 @@
-.App {
-  text-align: center;
+/* =============== variable =============== */
+
+:root {
+  --light-font: #666;
+  --light-bg-color: #eee;
+  --light-outter-shadow: 7px 7px 10px rgba(30,30,120,0.1),
+              -7px -7px 10px rgba(256,256,256,1);
+  --light-inner-shadow: inset 7px 7px 10px rgba(30,30,120,0.1),
+              inset -7px -7px 10px rgba(256,256,256,1);
+  
+  --dark-font: #aaa;
+  --dark-bg-color: #333;
+  --dark-outter-shadow: 7px 7px 10px rgba(0,0,0,0.4),
+               -7px -7px 10px rgba(256,256,256,0.1);
+  --dark-inner-shadow: inset 7px 7px 10px rgba(0,0,0,0.4),
+              inset -7px -7px 10px rgba(256,256,256,0.1);
+  
+  --scale-btn-push: scale(0.99);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* =============== format style =============== */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
+  width: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+h4 {
+  letter-spacing: 0.1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a {
+  color: inherit;
+}
+
+button { 
+  border: none; 
+  background-color: inherit; 
+  color: inherit;
+  display: block;
+}
+
+/* =============== background and font style =============== */
+
+.light-mode {
+  background-color: var(--light-bg-color);
+  color: var(--light-font);
+}
+
+.dark-mode {
+  background-color: var(--dark-bg-color);
+  color: var(--dark-font);  
+}
+
+/* ============== components style ============== */
+
+.outter-shadow.light-mode {
+  /* width: 100px;
+  height: 100px;
+  border-radius: 50%; */
+  box-shadow: var(--light-outter-shadow);
+}
+
+.inner-shadow.light-mode {
+  /* width: 100px;
+  height: 100px;
+  border-radius: 50%; */
+  box-shadow: var(--light-inner-shadow);
+  /* background-color: red; */
+}
+
+.input.light-mode {
+  width: 100px;
+  height: 100px;
+  border: 10px solid var(--light-bg-color);
+  border-radius: 50%;
+  box-shadow: var(--light-outter-shadow),
+              var(--light-inner-shadow);
+}
+
+.light-mode.btn-plain {
+  /* width: 100px;
+  height: 50px;
+  border-radius: 15px;
+  display: grid; */
+  place-items: center;
+  cursor: pointer;
+}
+.light-mode.btn-plain:active {
+  box-shadow: var(--light-inner-shadow);
+  transform: var(--scale-btn-push)  ;
+}
+
+.light-mode.btn-shadow {
+  /* width: 100px;
+  height: 50px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center; */
+  box-shadow: var(--light-outter-shadow);
+  cursor: pointer;
+}
+.light-mode.btn-shadow:active {
+  box-shadow: none;
+  transform: var(--scale-btn-push)  
+}
+
+.light-mode.curve-box {
+  background: linear-gradient(135deg, #fff, #ccc);
+}
+
+/* ============== dark-mode ============== */
+
+.dark-mode.outter-shadow {
+  /* width: 100px;
+  height: 100px;
+  border-radius: 50%; */
+  box-shadow:  var(--dark-outter-shadow);
+}
+
+.dark-mode.inner-shadow {
+  /* width: 100px;
+  height: 100px;
+  border-radius: 50%; */
+  box-shadow: var(--dark-inner-shadow)
+}
+
+.input.dark-mode {
+  /* width: 100px;
+  height: 100px; */
+  /* border-radius: 50%; */
+  border: 10px solid var(--dark-bg-color);
+  box-shadow: var(--dark-outter-shadow),
+              var(--dark-inner-shadow)
+}
+
+.dark-mode.btn-plain {
+  /* width: 100px;
+  height: 50px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center; */
+  cursor: pointer;
+}
+.dark-mode.btn-plain:active {
+  box-shadow: var(--dark-inner-shadow);
+  transform: var(--scale-btn-push)  
+}
+
+.dark-mode.btn-shadow {
+  /* width: 100px;
+  height: 50px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center; */
+  box-shadow: var(--dark-outter-shadow);
+  cursor: pointer;
+}
+.dark-mode.btn-shadow:active {
+  box-shadow: none;
+  transform: var(--scale-btn-push)  
+}
+
+.dark-mode.curve-box {
+  background: linear-gradient(-15deg, rgba(33, 33, 33, 1) 0%, rgba(66,66,66,1) 100%);
 }
