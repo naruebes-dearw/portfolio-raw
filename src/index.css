@@ -5,8 +5,8 @@
   outline: none;
   scroll-behavior: smooth;
   text-decoration: none;
-  transition-property: background-color, box-shadow, filter;
-  transition-duration: 1s;
+  transition-property: background-color, box-shadow, filter, transform;
+  transition-duration: 0.5s;
   transition-timing-function: ease;
 }
 

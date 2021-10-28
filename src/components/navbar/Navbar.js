@@ -1,8 +1,32 @@
 import "./Navbar.css";
 import NavItem from "./navItem/NavItem";
 import CheckScrollDown from "./checkScrollDown/CheckScrollDown";
+import { useEffect, useRef, useState } from "react";
+
+function OutsideClick(ref, { isClicked, setIsClicked }) {
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setIsClicked(true);
+      } else {
+        setIsClicked(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref]);
+  return isClicked;
+}
 
 const Navbar = ({ theme, themeToggle }) => {
+  const [isClicked, setIsClicked] = useState();
+  const boxRef = useRef(null);
+  const boxOutsideClick = OutsideClick(boxRef, { isClicked, setIsClicked });
+  const showSidebar = !boxOutsideClick && 'show-sidebar'
+
   const isScrollDown = CheckScrollDown(300);
   const navSmall = isScrollDown && "nav-small"
 
@@ -22,22 +46,31 @@ const Navbar = ({ theme, themeToggle }) => {
           </div>
         </div>
 
-        <div className="nav-items">
+        <button
+          onClick={() => setIsClicked(false)}
+          className={`nav-menus-toggle btn-shadow ${theme}`}>
+          <i className="bi bi-list"></i>
+        </button>
+
+        <div
+          ref={boxRef}
+          onBlur={() => setIsClicked(true)}
+          className={`nav-items outter-shadow ${showSidebar} ${theme}`}>
           <NavItem to="home" />
           <NavItem to="projects" />
           <NavItem to="about" />
           <NavItem to="contact" />
         </div>
 
-        <div className="nav-menus-toggle">
+        {/* <div className="nav-menus-toggle">
           <NavItem to="home" />
           <NavItem to="projects" />
           <NavItem to="about" />
           <NavItem to="contact" />
-        </div>
+        </div> */}
       </div>
     </div >
   )
 }
 
-export default Navbar
+export default Navbar;

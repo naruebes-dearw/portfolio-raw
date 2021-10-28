@@ -30,8 +30,24 @@ h4 {
   letter-spacing: 0.1em;
 }
 
-a {
+input,
+select,
+button,
+textarea,
+div,
+a, a:visited, a:hover, a:active {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a, a:visited, a:hover, a:active {
   color: inherit;
+  /* background-color: inherit; */
+
+}
+
+.special-link, .special-link:visited, .special-link:hover, .special-link:active {
+  color: inherit;
+  background-color: inherit;
 }
 
 button { 
@@ -60,6 +76,19 @@ button {
   height: 100px;
   border-radius: 50%; */
   box-shadow: var(--light-outter-shadow);
+  background-color: var(--light-bg-color);
+}
+
+.outter-shadow.light-mode.nav-items {
+  box-shadow: none;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 480px) {
+  .outter-shadow.light-mode.nav-items {
+    box-shadow: var(--light-outter-shadow);
+    background-color: var(--light-bg-color);
+  }  
 }
 
 .inner-shadow.light-mode {
@@ -110,6 +139,8 @@ button {
   background: linear-gradient(135deg, #fff, #ccc);
 }
 
+
+
 /* ============== dark-mode ============== */
 
 .dark-mode.outter-shadow {
@@ -117,6 +148,17 @@ button {
   height: 100px;
   border-radius: 50%; */
   box-shadow:  var(--dark-outter-shadow);
+  background-color: var(--dark-bg-color)
+}
+.outter-shadow.dark-mode.nav-items {
+  box-shadow: none;
+  background-color: transparent;
+}
+@media screen and (max-width: 480px) {
+  .outter-shadow.dark-mode.nav-items {
+    box-shadow: var(--dark-outter-shadow);
+    background-color: var(--dark-bg-color);
+  }  
 }
 
 .dark-mode.inner-shadow {
