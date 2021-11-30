@@ -24,6 +24,9 @@
   width: 100%;
   min-height: 100vh;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 80px;
 }
 
 h4 {
@@ -100,10 +103,10 @@ button {
 }
 
 .input.light-mode {
-  width: 100px;
-  height: 100px;
+  /* width: 100px; */
+  /* height: 100px; */
   border: 10px solid var(--light-bg-color);
-  border-radius: 50%;
+  /* border-radius: 50%; */
   box-shadow: var(--light-outter-shadow),
               var(--light-inner-shadow);
 }

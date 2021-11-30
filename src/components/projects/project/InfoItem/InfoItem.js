@@ -1,13 +1,12 @@
 import "./InfoItem.css";
 
-const InfoItem = ({ Icon, link, theme, title }) => {
+const InfoItem = ({ Icon, link, theme }) => {
   return (
     <a
-      className={`item-info-link btn-shadow ${theme}`}
+      className={`project-info-link btn-shadow ${theme}`}
       href={link}
       target="_blank"
       rel="noreferrer"
-      title={title}
     >
       {Icon && <Icon />}
     </a>

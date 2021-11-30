@@ -10,7 +10,7 @@ import profilePicture from '../../assets/me.png'
 const Home = ({ theme }) => {
   const [alertCopy, setAlertCopy] = useState(false);
   const copyEmail = async () => {
-    const myEmail = "naruebes.phudeht@gmail.com"
+    const myEmail = "naruebes.phudeth@gmail.com"
     await navigator.clipboard.writeText(myEmail);
 
     setAlertCopy(true);
@@ -33,16 +33,19 @@ const Home = ({ theme }) => {
               theme={theme}
               Icon={Email}
               link={"mailto:naruebes.phudeth@gmail.com"}
+              title="Email"
             />
             <InfoItem
               theme={theme}
               Icon={Resume}
               link={"https://google.com"}
+              title="Resume"
             />
             <InfoItem
               theme={theme}
               Icon={Github}
               link={"https://github.com/naruebes-dearw"}
+              title="Github"
             />
           </div>
 

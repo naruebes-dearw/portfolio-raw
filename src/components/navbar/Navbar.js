@@ -27,14 +27,15 @@ const Navbar = ({ theme, themeToggle }) => {
   const boxOutsideClick = OutsideClick(boxRef, { isClicked, setIsClicked });
   const showSidebar = !boxOutsideClick && 'show-sidebar'
 
-  const isScrollDown = CheckScrollDown(300);
-  const navSmall = isScrollDown && "nav-small"
+  // const isScrollDown = CheckScrollDown(300);
+  // const navSmall = isScrollDown && "nav-small"
 
   return (
-    <div className={`nav outter-shadow ${theme} ${navSmall}`}>
+    <div className={`nav outter-shadow ${theme}`}>
+      {/* <div className={`nav outter-shadow ${theme} ${navSmall}`}> */}
       <div className="nav-container">
         <div className="nav-logo">
-          <a href="#home"><h4>Naruebes</h4></a>
+          <a href="/"><h4>Naruebes</h4></a>
         </div>
 
         <div className="nav-theme">

@@ -18,15 +18,14 @@ function App() {
   }
   return (
     <div className={`app ${theme}`}>
-      <Navbar themeToggle={themeToggle} theme={theme} />
-
-      <Home theme={theme} />
-      <Projects />
-      <About />
-      <Contact />
-      <Footer />
-
       <BackToTop theme={theme} />
+      <Navbar themeToggle={themeToggle} theme={theme} />
+      <Home theme={theme} />
+      <Projects theme={theme} />
+      <About theme={theme} />
+      <Contact theme={theme} />
+      <Footer theme={theme} />
+
     </div>
   );
 }

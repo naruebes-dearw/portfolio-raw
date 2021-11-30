@@ -1,0 +1,13 @@
+.project-info-link {
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.project-info-link svg {
+  width: 20px;
+  height: 20px;
+}
