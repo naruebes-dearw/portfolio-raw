@@ -16,11 +16,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .home-text {
-  margin: 30px;
+  /* margin: 30px; */
   text-align: center;
 }
 
@@ -30,8 +30,8 @@
 
 .info-items {
   width: 250px;
-  margin-top: 50px;
-  margin-bottom: 25px;
+  /* margin-top: 50px; */
+  /* margin-bottom: 25px; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -114,14 +114,19 @@
 .photo-box div {
   width: 100%;
   height: 100%;
-  border-radius: 40px;
-  overflow: hidden;
 }
 
 .profile-picture {
   width: 100%;
   height: 100%;
+  border-radius: 40px;
+  overflow: hidden;
   object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.profile-picture.dark-mode {
+  border: 1px solid #555;
 }
 
 

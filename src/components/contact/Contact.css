@@ -18,6 +18,10 @@
   /* background-color: lightpink; */
 }
 
+.contact-left .info-items {
+  margin: 50px auto;
+}
+
 .contact-right {
   position: relative;
   padding: 20px 30px;

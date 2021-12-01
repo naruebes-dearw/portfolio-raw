@@ -5,7 +5,7 @@ import { ReactComponent as Resume } from '../../assets/resume.svg'
 import { ReactComponent as Github } from '../../assets/github.svg'
 import { ReactComponent as Copy } from '../../assets/copy2.svg'
 import { useState } from "react"
-// import profilePicture from '../../assets/me.png'
+import profilePicture from '../../assets/naruebes-for-web.jpg'
 
 const Home = ({ theme }) => {
   const [alertCopy, setAlertCopy] = useState(false);
@@ -71,7 +71,9 @@ const Home = ({ theme }) => {
         <div className="home-right">
           <div className={`photo-box outter-shadow ${theme}`}>
             <div>
-              <img src={"profilePicture"} alt="profile picture" className="profile-picture" />
+              <img src={profilePicture}
+                alt="profile picture"
+                className={`profile-picture ${theme}`} />
             </div>
           </div>
         </div>
