@@ -46,6 +46,10 @@
   border: 1px solid #ddd;
 }
 
+.project .img-container.dark-mode img {
+  border: 1px solid #444;
+}
+
 .project-right {
   flex: 1;
 }

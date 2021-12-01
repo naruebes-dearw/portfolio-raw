@@ -4,7 +4,12 @@ import { ReactComponent as Email } from '../../assets/email.svg'
 import { ReactComponent as Resume } from '../../assets/resume.svg'
 import { ReactComponent as Github } from '../../assets/github.svg'
 import { ReactComponent as Copy } from '../../assets/copy2.svg'
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from 'emailjs-com';
+
+const SERVICE_ID = "service_3m98fhh";
+const TEMPLATE_ID = "template_2kroxj9";
+const USER_ID = "user_IwYml9sBhvBhxA59ujyM6";
 
 const Contact = ({ theme }) => {
   const [name, setName] = useState("");
@@ -13,17 +18,35 @@ const Contact = ({ theme }) => {
   const [alertCopy, setAlertCopy] = useState(false);
   const [alertMsg, setAlertMsg] = useState(false);
 
+  const form = useRef();
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setAlertMsg(true);
-    setTimeout(() => {
-      setAlertMsg(false);
-    }, 2000);
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, USER_ID)
+      .then(() => {
+        setAlertMsg(true);
+        setAlertMsg(true);
+        setTimeout(() => {
+          setAlertMsg(false);
+        }, 5000);
 
-    setName("");
-    setEmail("");
-    setMessage("");
+        setName("");
+        setEmail("");
+        setMessage("");
+      }, (error) => {
+        console.log(error.text);
+        alert("Something went wrong! Can not sent message.")
+      });
+
+    // setAlertMsg(true);
+    // setTimeout(() => {
+    //   setAlertMsg(false);
+    // }, 2000);
+
+    // setName("");
+    // setEmail("");
+    // setMessage("");
   }
 
   const copyEmail = async () => {
@@ -41,7 +64,7 @@ const Contact = ({ theme }) => {
       <h1 align="center">Contact Me</h1>
       <div className="contact-body">
         <div className="contact-left">
-          <p>Don't hesitate to reach me.</p>
+          <p>Feel free to Contact me by submitting the form. I will get back to you as soon as possible.</p>
           <div className="info-items">
             <InfoItem
               theme={theme}
@@ -52,7 +75,7 @@ const Contact = ({ theme }) => {
             <InfoItem
               theme={theme}
               Icon={Resume}
-              link={"https://google.com"}
+              link={require("../../assets/naruebes-resume.pdf").default}
               title="Resume"
             />
             <InfoItem
@@ -80,11 +103,12 @@ const Contact = ({ theme }) => {
               <p className="alert-copy">✔ Copied to clipboard</p>
             </div>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form ref={form} onSubmit={handleSubmit}>
 
             <input
               className={`input ${theme}`}
               type="text"
+              name="name"
               value={name}
               onChange={e => setName(e.target.value)}
               placeholder="Name"
@@ -92,7 +116,8 @@ const Contact = ({ theme }) => {
             />
             <input
               className={`input ${theme}`}
-              type="text"
+              type="email"
+              name="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
               placeholder="Email@example.com"
@@ -100,6 +125,7 @@ const Contact = ({ theme }) => {
             />
             <textarea
               className={`input ${theme}`}
+              name="message"
               value={message}
               onChange={e => setMessage(e.target.value)}
               placeholder="Message..."

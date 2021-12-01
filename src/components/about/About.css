@@ -1,4 +1,19 @@
 .about {
+  padding-top: 70px;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
+  text-align: center;
+}
+
+.about-body {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 40px;
+  border-radius: 10px;
+  background-color: red;
+}
+
+.about-body p {
+  margin-bottom: 30px
 }
