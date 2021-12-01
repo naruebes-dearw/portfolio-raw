@@ -33,7 +33,7 @@ const Project = (props) => {
         </div>
 
         <div className={`img-container outter-shadow ${theme}`}>
-          <a href={projectUrl} target="_blank">
+          <a href={projectUrl} target="_blank" rel="noreferrer">
             <img src={imgUrl} />
           </a>
         </div>
