@@ -1,5 +1,5 @@
 .project {
-  width: 800px;
+  max-width: 800px;
   margin-top: 40px;
   padding: 20px 30px;
   border-radius: 10px;
@@ -56,4 +56,12 @@
 
 .project-right h2 {
   margin-top: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .project {
+    padding: 30px;
+    flex-direction: column;
+    row-gap: 20px;
+  }
 }

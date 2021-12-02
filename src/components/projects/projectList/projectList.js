@@ -5,7 +5,7 @@ const projectList = [
     imgUrl: require("./project_facebook_clone_img.jpg").default,
     gitHubUrl: "https://github.com/naruebes-dearw/facebookcloneproject",
     projectUrl: "https://facebookcloneproject.herokuapp.com",
-    projectDescption: "Social media website was created by MERN stack that can create, edit, delete post and can create, edit ,delete user profile including login system using open authentication by Facebook and Google.",
+    projectDescption: "Social media website was created by MERN stack that can create, edit, delete post and can create, edit, delete user profile including login system using open authentication by Facebook and Google.",
     technology: "ReactJS, NodeJS, MongoDB, Express, Material-UI, Context API, React-Router, PassportJS, Cookie-Session, OAuth, Heroku",
   },
   {
@@ -28,11 +28,11 @@ const projectList = [
   },
   {
     id: 4,
-    title: "Student List Creater",
-    imgUrl: require("./project-studentlistcreater-img.png").default,
-    gitHubUrl: "https://github.com/naruebes-dearw/studentlistcreater-project",
+    title: "Student List Creator",
+    imgUrl: require("./project-studentlistcreator-img.png").default,
+    gitHubUrl: "https://github.com/naruebes-dearw/studentlistcreator-project",
     projectUrl: "https://studentlistproject.herokuapp.com/",
-    projectDescption: "Student List Creater website was created by MERN stack that can create, edit and delete student infomation.",
+    projectDescption: "Student List Creator website was created by MERN stack that can create, edit and delete student infomation.",
     technology: "ReactJS, NodeJS, MongoDB, Express, React-Bootstrap, React-Router, Heroku",
   },
 ]

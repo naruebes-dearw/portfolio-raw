@@ -1,9 +1,10 @@
 .contact {
+  padding: 0 25px;
   padding-top: 70px;
 }
 
 .contact-body {
-  width: 800px;
+  max-width: 800px;
   margin: 0 auto;
   margin-top: 20px;
   display: flex;
@@ -16,6 +17,12 @@
   padding: 20px 30px;
   flex: 1;
   /* background-color: lightpink; */
+}
+
+.contact-left p {
+  text-align: center;
+  max-width: 340px;
+  margin: 0 auto;
 }
 
 .contact-left .info-items {
@@ -101,3 +108,20 @@
   opacity: 1;
 }
 
+@media screen and (max-width: 800px) {
+  .contact-body {
+    flex-direction: column;
+  }
+
+  /* .contact-left {
+    padding-bottom: 0;
+  } */
+
+  .contact-left .info-items {
+    margin: 20px auto;
+  }
+}
+
+/* @media screen and (max-width: 800px) {
+  
+} */

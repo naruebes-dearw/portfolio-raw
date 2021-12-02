@@ -57,12 +57,16 @@ const Navbar = ({ theme, themeToggle }) => {
           ref={boxRef}
           onBlur={() => setIsClicked(true)}
           className={`nav-items outter-shadow ${showSidebar} ${theme}`}>
+          <button
+            onClick={() => setIsClicked(true)}
+            className={`nav-menus-toggle nav-close btn-shadow ${theme}`}>
+            <i className="bi bi-list"></i>
+          </button>
           <NavItem to="home" />
           <NavItem to="projects" />
           <NavItem to="about" />
           <NavItem to="contact" />
         </div>
-
         {/* <div className="nav-menus-toggle">
           <NavItem to="home" />
           <NavItem to="projects" />

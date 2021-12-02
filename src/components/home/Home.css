@@ -13,6 +13,7 @@
 
 .home-left {
   width: 60%;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,6 +92,7 @@
 
 .home-right {
   width: 40%;
+  padding: 0 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,10 +132,11 @@
 }
 
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 800px) {
   .home {
     text-align: center;
     width: 90%;
+    padding-top: 70px;
   }
 
   .home-right {
@@ -141,7 +144,7 @@
   }
 
   .home-container {
-    height: 80vh;
+    height: 450px;
   }
 
   .home-left {
